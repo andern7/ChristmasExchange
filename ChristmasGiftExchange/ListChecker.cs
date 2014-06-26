@@ -20,9 +20,11 @@ namespace ChristmasGiftExchange
             FamilyOrdered = new List<Person>(Family);
             FamilyRandom = new List<Person>(Family);
 
-            shuffle(FamilyRandom);
+            this.FamilyRandom = shuffle(this.FamilyRandom);
 
         }
+
+       
 
         private Boolean isValidList(List<Person> Family)
         {
@@ -51,7 +53,7 @@ namespace ChristmasGiftExchange
             return true;
 
         }
-        public void shuffle<FamilyRandom>(IList<FamilyRandom> Family)
+        public List<Person> shuffle(List<Person> Family)
         {
             Random rng = new Random();
             int n = Family.Count();
@@ -59,11 +61,11 @@ namespace ChristmasGiftExchange
             {
                 n--;
                 int k = rng.Next(n + 1);
-                FamilyRandom value = Family[k];
+                Person value = Family[k];
                 Family[k] = Family[n];
                 Family[n] = value;
-
             }
+            return Family;
 
         }
 
@@ -78,18 +80,18 @@ namespace ChristmasGiftExchange
             {
                 if (FamilyOrdered[i].getLastName().Equals(FamilyRandom[i].getLastName()))
                 {
-                    shuffle(FamilyRandom);
+                    this.FamilyRandom = shuffle(this.FamilyRandom);
                     return getList();
                 }
 
                 result += FamilyOrdered[i].getFirstName() + " " +
-                        FamilyOrdered[i].getLastName() + "gives gift to " +
+                        FamilyOrdered[i].getLastName() + " gives gift to " +
                         FamilyRandom[i].getFirstName() + " " +
-                        FamilyRandom[i].getLastName() + '\n';
+                        FamilyRandom[i].getLastName() + '\r' +'\n';
 
 
             }
-            return result + "\n" + "The list was sorted" + TimesListTried.ToString() + "Times";
+            return result + '\r' + '\n' + " The list was sorted " + TimesListTried.ToString() + "Times";
 
         }
 

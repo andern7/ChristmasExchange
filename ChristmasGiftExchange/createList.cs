@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChristmasGiftExchange
 {
-   public class createList : Form1
+   public class createList
     {
         private List<Person> Family;
 
@@ -37,7 +37,7 @@ namespace ChristmasGiftExchange
             string result = "";
             for (int i = 0; i < Family.Count; i++)
 			{
-			 result += Family[i].getFirstName() + " " + Family[i].getLastName() + "\n";
+			 result += Family[i].getFirstName() + " " + Family[i].getLastName() + " \r\n";
 			}
 
             return result;

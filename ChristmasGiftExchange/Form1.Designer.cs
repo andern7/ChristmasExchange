@@ -28,24 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.resultsBox = new System.Windows.Forms.ListBox();
             this.fNameTextBox = new System.Windows.Forms.TextBox();
             this.lNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.resultsBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // resultsBox
-            // 
-            this.resultsBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultsBox.FormattingEnabled = true;
-            this.resultsBox.ItemHeight = 17;
-            this.resultsBox.Location = new System.Drawing.Point(22, 34);
-            this.resultsBox.Name = "resultsBox";
-            this.resultsBox.Size = new System.Drawing.Size(392, 259);
-            this.resultsBox.TabIndex = 0;
             // 
             // fNameTextBox
             // 
@@ -105,19 +95,27 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // resultsBox
+            // 
+            this.resultsBox.Location = new System.Drawing.Point(22, 31);
+            this.resultsBox.Multiline = true;
+            this.resultsBox.Name = "resultsBox";
+            this.resultsBox.Size = new System.Drawing.Size(381, 249);
+            this.resultsBox.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(426, 372);
+            this.Controls.Add(this.resultsBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lNameTextBox);
             this.Controls.Add(this.fNameTextBox);
-            this.Controls.Add(this.resultsBox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -131,9 +129,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox resultsBox;
         private System.Windows.Forms.TextBox fNameTextBox;
         private System.Windows.Forms.TextBox lNameTextBox;
+        private System.Windows.Forms.TextBox resultsBox;
     }
 }
 
