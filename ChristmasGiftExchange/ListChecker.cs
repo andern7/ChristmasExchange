@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Security.Cryptography;
+using System.Windows.Forms;
 
 namespace ChristmasGiftExchange
 {
@@ -12,11 +12,13 @@ namespace ChristmasGiftExchange
         private List<Person> FamilyOrdered;
         private List<Person> FamilyRandom;
         Random r = new Random();
-        public string message = "Please enter a name";
+        public string message = "Cannot match names. Add more names and try again.";
         private int TimesListTried = 0;
 
+       
         public ListChecker(List<Person> Family)
         {
+                        
             FamilyOrdered = new List<Person>(Family);
             FamilyRandom = new List<Person>(Family);
 
@@ -71,32 +73,34 @@ namespace ChristmasGiftExchange
 
         public string getList()
         {
-            TimesListTried++;
+                TimesListTried++;
 
-            int length = FamilyOrdered.Count();
-            string result = "";
+                int length = FamilyOrdered.Count();
+                string result = "";
 
-            for (int i = 0; i < length; i++)
-            {
-                if (FamilyOrdered[i].getLastName().Equals(FamilyRandom[i].getLastName()))
-                {
-                    this.FamilyRandom = shuffle(this.FamilyRandom);
-                    return getList();
-                }
+                for (int i = 0; i < length; i++)
+                    {
+                    if (FamilyOrdered[i].getLastName().Equals(FamilyRandom[i].getLastName()))
+                    {
+                        this.FamilyRandom = shuffle(this.FamilyRandom);
+                        return getList();
+                    }
 
-                result += FamilyOrdered[i].getFirstName() + " " +
-                        FamilyOrdered[i].getLastName() + " gives gift to " +
-                        FamilyRandom[i].getFirstName() + " " +
-                        FamilyRandom[i].getLastName() + '\r' +'\n';
+                    result += FamilyOrdered[i].getFirstName() + " " +
+                            FamilyOrdered[i].getLastName() + " gives gift to " +
+                            FamilyRandom[i].getFirstName() + " " +
+                            FamilyRandom[i].getLastName() + '\r' + '\n';
 
 
+                    }
+                return result + '\r' + '\n' + " The list was sorted " + TimesListTried.ToString() + "Times";
             }
-            return result + '\r' + '\n' + " The list was sorted " + TimesListTried.ToString() + "Times";
+           
 
         }
 
     }
-}
+
            
         
        

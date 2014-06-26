@@ -49,9 +49,9 @@ namespace ChristmasGiftExchange
                 ListChecker lc = new ListChecker(Family);
                 return lc.getList();
             }
-            catch (Exception )
+            catch (Exception e)
             {
-                return "Unable to create list. Please try again.";
+                return e.Message;
             }
         }
     }

@@ -97,6 +97,7 @@
             // 
             // resultsBox
             // 
+            this.resultsBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultsBox.Location = new System.Drawing.Point(22, 31);
             this.resultsBox.Multiline = true;
             this.resultsBox.Name = "resultsBox";
